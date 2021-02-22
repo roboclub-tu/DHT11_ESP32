@@ -9,26 +9,26 @@
 //DHT sensor
 DHT dht(DHTPIN, DHTTYPE);
 String Temperature(){
-  float t = dht.readTemperature();
-  if(isnan(t)) { 
-    Serial.println("Failed to read form DHT");
-    return "-";
-  }
-  else { 
-    Serial.print(t);
-    return String(t);
-  }
+float t = dht.readTemperature();
+if(isnan(t)) { 
+Serial.println("Failed to read form DHT");
+return "-";
+}
+else { 
+Serial.print(t);
+return String(t);
+}
 }
 String Humidity(){
-  float h = dht.readHumidity();
-  if(isnan(h)) { 
-    Serial.println("Failed to read form DHT");
-    return "-";
-  }
-  else { 
-    Serial.print(h);
-    return String(h);
-  }
+float h = dht.readHumidity();
+if(isnan(h)) { 
+Serial.println("Failed to read form DHT");
+return "-";
+}
+else { 
+Serial.print(h);
+return String(h);
+}
 }
 
 //network
@@ -102,13 +102,13 @@ setInterval(function ( ) {
 
 //Replace the values in the HTML
 String processor(const String& var){ 
-  if(var == "TEMPERATURE"){
-    return Temperature();
-  }
-  else if(var == "Humidity"){
-    return Humidity();
-  }
-  return String();
+if(var == "TEMPERATURE"){
+return Temperature();
+}
+else if(var == "Humidity"){
+return Humidity();
+}
+return String();
 }
 
 
